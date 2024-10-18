@@ -40,14 +40,23 @@ def index():
 @app.route('/add', methods=['POST'])
 @login_required
 def add_user():
-    if current_user.is_authenticated:
-        name = request.form['name']
-        email = request.form['email']
-        password = generate_password_hash(request.form['password'], method='pbkdf2:sha256')
-        new_user = User(name=name, email=email, password=password)
-        db.session.add(new_user)
-        db.session.commit()
-        flash('User added successfully')
+    name = request.form['name']
+    email = request.form['email']
+
+    # Verificar si el email ya existe
+    existing_user = User.query.filter_by(email=email).first()
+    if existing_user:
+        flash(f'The email {email} is already registered. Please use a different email.')
+        return redirect(url_for('index'))
+
+    # Si el email no existe, se procede a agregar el nuevo usuario
+    password = generate_password_hash(request.form['password'], method='pbkdf2:sha256')
+    new_user = User(name=name, email=email, password=password)
+
+    db.session.add(new_user)
+    db.session.commit()
+    flash('User added successfully!')
+
     return redirect(url_for('index'))
 
 
