@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 app = Flask(__name__)
-app.config['SQLACHEY_DATABASE_URI'] = 'sqlite:///users.db'
-app.config['SQLACHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
@@ -34,11 +34,11 @@ def add_user():
 
 @app.route('/delete/<int:id>')
 def delete_user(id):
-    user = User.query.get_or4040(id)
+    user = User.query.get_or_404(id)
     db.session.delete(user)
     db.session.commit()
     return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
-    app.run(debuf=True)
+    app.run(debug=True)
