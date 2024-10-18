@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ec8a826-12fc-4b36-9cd6-b4d49595b555" name="Changes" comment="reparando fallos y iniciando primeras pruebas">
+    <list default="true" id="8ec8a826-12fc-4b36-9cd6-b4d49595b555" name="Changes" comment="creando login para administrar usuarios">
+      <change afterPath="$PROJECT_DIR$/genratekey.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/versions/aaaef4c29849_add_password_column_to_user_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/users.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -30,9 +35,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "history": [
+    {
+      "state": "OPEN",
+      "author": "ovier-oh"
+    }
+  ],
   "lastFilter": {
     "state": "OPEN",
-    "assignee": "ovier-oh"
+    "author": "ovier-oh"
   }
 }]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
@@ -113,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729284910405</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="creando login para administrar usuarios">
+      <option name="closed" value="true" />
+      <created>1729286036443</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729286036443</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +151,7 @@
     <MESSAGE value="creado archivo principal" />
     <MESSAGE value="creando servidor" />
     <MESSAGE value="reparando fallos y iniciando primeras pruebas" />
-    <option name="LAST_COMMIT_MESSAGE" value="reparando fallos y iniciando primeras pruebas" />
+    <MESSAGE value="creando login para administrar usuarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="creando login para administrar usuarios" />
   </component>
 </project>

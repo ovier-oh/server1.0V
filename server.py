@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_KEY'] = 'my_secret_key'
+app.config['SECRET_KEY'] = b'\x0f;\xf2Ke7UZx\x7f/\x90 \xa5zp\x06\xbd\xf6\xe7\x81\xb2u@'
 
 db = SQLAlchemy(app)
 login_manager = LoginManager()
@@ -43,7 +43,7 @@ def add_user():
     if current_user.is_authenticated:
         name = request.form['name']
         email = request.form['email']
-        password = generate_password_hash(request.form['password'], method='sha256')
+        password = generate_password_hash(request.form['password'], method='pbkdf2:sha256')
         new_user = User(name=name, email=email, password=password)
         db.session.add(new_user)
         db.session.commit()
@@ -72,7 +72,7 @@ def login():
             return redirect(url_for('index'))
         else:
             flash('Login failed. Check your email or password.')
-        return render_template('login.html')
+    return render_template('login.html')
 
 
 @app.route('/logout')
