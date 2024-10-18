@@ -16,7 +16,7 @@ login_manager.login_view = 'login'
 migrate = Migrate(app, db)
 
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
@@ -66,12 +66,19 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+        # Buscar usuario por email
         user = User.query.filter_by(email=email).first()
-        if user and check_password_hash(user.password, password):
-            login_user(user)
-            return redirect(url_for('index'))
+
+        if user:
+            # Verificar que la contraseña es correcta
+            if check_password_hash(user.password, password):
+                login_user(user)  # Loguear al usuario
+                return redirect(url_for('index'))
+            else:
+                flash('Invalid credentials. Please try again.')
         else:
-            flash('Login failed. Check your email or password.')
+            flash('User not found. Please register first.')
+
     return render_template('login.html')
 
 
