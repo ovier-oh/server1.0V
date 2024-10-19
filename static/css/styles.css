@@ -1,0 +1,174 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+p {
+    color: #7f8c8d;
+    text-align: center;
+}
+
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ecf0f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3498db;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    outline: none;
+    border-color: #2980b9;
+}
+
+button[type="submit"] {
+    background-color: #2ecc71;
+}
+
+button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+/* Mensajes flash */
+ul {
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+li.flash-message {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+/* Estilos del formulario de login */
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: #2980b9;
+}
+
+.login-container button[type="submit"] {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button[type="submit"]:hover {
+    background-color: #3498db;
+}
+
+/* Mensajes flash */
+.login-container .flash-message {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
