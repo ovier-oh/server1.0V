@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Manage Users</title>
-    <!-- Enlace a la hoja de estilos -->
+    <!-- Enlazar la hoja de estilos -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
@@ -24,21 +24,50 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Password" required><br><br>
 
+            <!-- Selector para definir si el usuario es administrador -->
+            <label for="is_admin">Is Admin:</label>
+            <select id="is_admin" name="is_admin">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+            </select><br><br>
+
             <button type="submit">Add User</button>
         </form>
 
         <h2>Registered Users</h2>
-        <ul>
-            {% for user in users %}
-            <li>
-                {{ user.name }} ({{ user.email }})
-                <div>
-                    <a href="/delete/{{ user.id }}">Delete</a> |
-                    <a href="/reset_password/{{ user.id }}">Reset Password</a>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
+        <div class="user-columns">
+            <!-- Columna de Administradores -->
+            <div class="admin-column">
+                <h3>Administrators</h3>
+                <ul>
+                    {% for user in users if user.is_admin %}
+                    <li>
+                        {{ user.name }} ({{ user.email }})
+                        <div>
+                            <a href="/delete/{{ user.id }}">Delete</a> |
+                            <a href="/reset_password/{{ user.id }}">Reset Password</a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Columna de Usuarios Normales -->
+            <div class="user-column">
+                <h3>Regular Users</h3>
+                <ul>
+                    {% for user in users if not user.is_admin %}
+                    <li>
+                        {{ user.name }} ({{ user.email }})
+                        <div>
+                            <a href="/delete/{{ user.id }}">Delete</a> |
+                            <a href="/reset_password/{{ user.id }}">Reset Password</a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
 
         <!-- Mensajes Flash -->
         {% with messages = get_flashed_messages() %}

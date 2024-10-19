@@ -22,6 +22,7 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
+    is_admin = db.Column(db.Boolean, default=False)
 
 
 @login_manager.user_loader
@@ -50,9 +51,12 @@ def add_user():
         flash(f'The email {email} is already registered. Please use a different email.')
         return redirect(url_for('index'))
 
+    # Convertir el valor de is_admin en booleano
+    is_admin = request.form['is_admin'] == 'True'
+
     # Si el email no existe, se procede a agregar el nuevo usuario
     password = generate_password_hash(request.form['password'], method='pbkdf2:sha256')
-    new_user = User(name=name, email=email, password=password)
+    new_user = User(name=name, email=email, password=password, is_admin=is_admin)
 
     db.session.add(new_user)
     db.session.commit()
@@ -79,6 +83,7 @@ def reset_password(id):
 
     flash(f'The password for {user.name} has been reset to: {new_password}')
     return redirect(url_for('index'))
+
 
 @app.route('/delete/<int:id>')
 @login_required
