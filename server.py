@@ -3,7 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-
+import random
+import string
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -59,6 +60,25 @@ def add_user():
 
     return redirect(url_for('index'))
 
+
+def generate_random_password(length=8):
+    characters = string.ascii_letters + string.digits
+    return ''.join(random.choice(characters) for i in range(length))
+
+
+@app.route('/reset_password/<int:id>', methods=['GET','POST'])
+@login_required
+def reset_password(id):
+    user = User.query.get_or_404(id)
+
+    new_password = generate_random_password()
+    hashed_password = generate_password_hash(new_password, method='pbkdf2:sha256')
+
+    user.password = hashed_password
+    db.session.commit()
+
+    flash(f'The password for {user.name} has been reset to: {new_password}')
+    return redirect(url_for('index'))
 
 @app.route('/delete/<int:id>')
 @login_required

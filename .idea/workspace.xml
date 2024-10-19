@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ec8a826-12fc-4b36-9cd6-b4d49595b555" name="Changes" comment="arrglando bugs">
+    <list default="true" id="8ec8a826-12fc-4b36-9cd6-b4d49595b555" name="Changes" comment="agregando un boton para resetear contraseñas y la logica en el servidor">
+      <change afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/users.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,30 +32,30 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "state": "OPEN",
-      "author": "ovier-oh"
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;author&quot;: &quot;ovier-oh&quot;
     }
   ],
-  "lastFilter": {
-    "state": "OPEN",
-    "author": "ovier-oh"
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;author&quot;: &quot;ovier-oh&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:ovier-oh/server1.0V.git",
-    "accountId": "4339bbf4-d7c7-4abb-b1ae-c2041eca8892"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:ovier-oh/server1.0V.git&quot;,
+    &quot;accountId&quot;: &quot;4339bbf4-d7c7-4abb-b1ae-c2041eca8892&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2ncmJunDE1cdTyLNofvE2cOL7KJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -145,7 +146,31 @@
       <option name="project" value="LOCAL" />
       <updated>1729287724839</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="arreglando bugs y haciendo pruebas">
+      <option name="closed" value="true" />
+      <created>1729288054843</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729288054843</updated>
+    </task>
+    <task id="LOCAL-00009" summary="haciendo pruebas de agregar usuarios y borrar usuarios">
+      <option name="closed" value="true" />
+      <created>1729288093369</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729288093369</updated>
+    </task>
+    <task id="LOCAL-00010" summary="agregando un boton para resetear contraseñas y la logica en el servidor">
+      <option name="closed" value="true" />
+      <created>1729324437060</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729324437060</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,6 +192,9 @@
     <MESSAGE value="creando login para administrar usuarios" />
     <MESSAGE value="arreglando bugs de login" />
     <MESSAGE value="arrglando bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="arrglando bugs" />
+    <MESSAGE value="arreglando bugs y haciendo pruebas" />
+    <MESSAGE value="haciendo pruebas de agregar usuarios y borrar usuarios" />
+    <MESSAGE value="agregando un boton para resetear contraseñas y la logica en el servidor" />
+    <option name="LAST_COMMIT_MESSAGE" value="agregando un boton para resetear contraseñas y la logica en el servidor" />
   </component>
 </project>
